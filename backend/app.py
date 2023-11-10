@@ -4,6 +4,7 @@ import os
 from dotenv import load_dotenv
 from langchain.embeddings.openai import OpenAIEmbeddings
 from llm.llm import vector_search
+from llm.datasaver import datasaver
 
 app = Flask(__name__)
 
@@ -28,7 +29,12 @@ app = Flask(__name__)
 # def index():
 #     return 'Index Page'    
 
-@app.route('/hello')
-async def hello():
+@app.route('/load')
+async def load():
+    datasaver()
+    return "Loaded data sucessfully!"
+
+@app.route('/query')
+async def query():
     res = await vector_search()
     return res

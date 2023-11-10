@@ -14,7 +14,6 @@ async def vector_search():
 
     new_db = FAISS.load_local("./faiss/state_of_the_union", embeddings)
 
-    # new_db = await  FAISS.load_local("./faiss/state_of_the_union", embeddings, asynchronous=True)
     docs = await new_db.asimilarity_search(query)
 
     return docs[0].page_content
