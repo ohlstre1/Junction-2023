@@ -26,7 +26,11 @@ const Demo = () => {
                 {!result ?
                     < div className='chat-container'>
                         <Textarea rows={10} placeholder="Type your message here." value={prompt} onChange={(e) => handlePromptChange(e)} />
-                        <Button className="float-right mt-3" onClick={sendPrompt} disabled={prompt === ""}>Send</Button>
+                        <Button
+                            className="float-right mt-3"
+                            onClick={sendPrompt}
+                        // disabled={prompt === ""}
+                        >Send</Button>
                     </div>
                     :
                     <ValidateOutput data={result} />

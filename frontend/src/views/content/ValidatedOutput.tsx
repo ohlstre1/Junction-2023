@@ -10,25 +10,29 @@ export interface OutputData {
 
 const ValidateOutput = ({ data }: OutputData) => {
 
-    const getHighlightColor = (trustScore: number): string => {
-        const score = trustScore
+    const getHighlightStyle = (trustScore: number) => {
+        const score = trustScore;
 
         if (score >= 0.75) {
-            return 'green';
+            return { borderBottom: '2px solid green' };
         } else if (score >= 0.5) {
-            return 'yellow';
+            return { borderBottom: '2px solid yellow' };
         } else {
-            return 'red';
+            return { borderBottom: '2px solid red' };
         }
     };
     return (
         <>
             <div className="output-container">
-                {data.map((item, index) => (
-                    <p key={index} style={{ color: getHighlightColor(item.trust_score) }}>
-                        {item.sentence}
+                <div>
+                    <p className="output-p">
+                        {data.map((item, index) => (
+                            <span key={index} style={getHighlightStyle(item.trust_score)}>
+                                {item.sentence}{' '}
+                            </span>
+                        ))}
                     </p>
-                ))}
+                </div>
             </div>
         </>
     )

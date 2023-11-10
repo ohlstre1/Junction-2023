@@ -14,4 +14,8 @@
 .output-container {
     margin: 0 auto;
     max-width: 658px;
+
+    .output-p {
+        line-height: 32px;
+    }
 }
