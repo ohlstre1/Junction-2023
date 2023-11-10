@@ -2,3 +2,8 @@ Flask
 langchain
 chromadb
 openai
+python-dotenv
+unstructured[all-docs]
+faiss-cpu
+tiktoken
+flask[async]
