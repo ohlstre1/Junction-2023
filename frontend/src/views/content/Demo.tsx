@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import {Textarea} from '@/components/ui/textarea';
 import {Button} from '@/components/ui/button';
-import ValidateOutput, {SentenceData} from './ValidatedOutput';
+import ValidatedOutput, {SentenceData} from './ValidatedOutput';
 import {Skeleton} from '@/components/ui/skeleton';
 import dummy from './dummy.json';
 import './Content.scss';
@@ -32,34 +32,36 @@ const Demo = () => {
     return (
         <>
             <div className="main-container">
-                {!result ? (
-                    <>
-                        {!fetchingResults ? (
-                            <div className="chat-container">
-                                <Textarea
-                                    rows={10}
-                                    placeholder="Type your message here."
-                                    value={prompt}
-                                    onChange={(e) => handlePromptChange(e)}
-                                />
-                                <Button
-                                    className="float-right mt-3"
-                                    onClick={sendPrompt}
-                                    // disabled={prompt === ""}
-                                >
-                                    Send
-                                </Button>
-                            </div>
-                        ) : (
-                            <Skeleton className="fetching-skeleton" />
-                        )}
-                    </>
-                ) : (
-                    <ValidateOutput
-                        data={result}
-                        clear={clearResults}
-                    />
-                )}
+                <div className="content-container">
+                    {!result ? (
+                        <>
+                            {!fetchingResults ? (
+                                <div className="chat-container">
+                                    <Textarea
+                                        rows={10}
+                                        placeholder="Type your message here."
+                                        value={prompt}
+                                        onChange={(e) => handlePromptChange(e)}
+                                    />
+                                    <Button
+                                        className="float-right mt-3 pb-3 "
+                                        onClick={sendPrompt}
+                                        // disabled={prompt === ""}
+                                    >
+                                        Send
+                                    </Button>
+                                </div>
+                            ) : (
+                                <Skeleton className="fetching-skeleton" />
+                            )}
+                        </>
+                    ) : (
+                        <ValidatedOutput
+                            data={result}
+                            clear={clearResults}
+                        />
+                    )}
+                </div>
             </div>
         </>
     );

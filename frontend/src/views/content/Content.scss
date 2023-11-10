@@ -6,9 +6,16 @@
     overflow: auto;
 }
 
+.content-container {
+    width: 100%;
+    padding: 1rem;
+}
+
 .chat-container {
     margin: 0 auto;
     max-width: 658px;
+    display: flex;
+    flex-direction: column;
 }
 
 .fetching-skeleton {
@@ -20,6 +27,8 @@
 .output-container {
     margin: 0 auto;
     max-width: 658px;
+    display: flex;
+    flex-direction: column;
 
     .output-p {
         line-height: 32px;

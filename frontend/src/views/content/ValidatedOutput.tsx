@@ -11,7 +11,7 @@ export interface OutputData {
     clear: () => void;
 }
 
-const ValidateOutput = ({data, clear}: OutputData) => {
+const ValidatedOutput = ({data, clear}: OutputData) => {
     const perc2color = (perc: number) => {
         perc = perc * 100;
         let r,
@@ -70,4 +70,4 @@ const ValidateOutput = ({data, clear}: OutputData) => {
     );
 };
 
-export default ValidateOutput;
+export default ValidatedOutput;
