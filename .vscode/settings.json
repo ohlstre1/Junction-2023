@@ -1,0 +1,14 @@
+{
+    "[typescript]": {
+      "editor.formatOnPaste": false,
+      "editor.formatOnSave": false,
+    },
+    "[python]": {
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.formatOnType": true,
+        "editor.wordBasedSuggestions": false
+    },
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4
+  }
