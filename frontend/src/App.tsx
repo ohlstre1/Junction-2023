@@ -1,8 +1,8 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import Demo from './views/content/Demo';
-import {ThemeProvider} from './components/theme-provider';
+import { ThemeProvider } from './components/theme-provider';
 import Nav from './views/nav/Nav';
-import './App.css';
+import './App.scss';
 import './globals.css';
 
 const App = () => {

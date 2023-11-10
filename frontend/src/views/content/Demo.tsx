@@ -1,15 +1,26 @@
 import { useState } from 'react';
-import reactLogo from '../../assets/react.svg';
-import viteLogo from '/vite.svg';
+import { Textarea } from "@/components/ui/textarea"
 import { Button } from '@/components/ui/button';
+import './Content.scss';
 
 const Demo = () => {
-    const [count, setCount] = useState(0);
+    const [prompt, setPrompt] = useState("");
+
+    const handlePromptChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+        setPrompt(e.target.value);
+    }
+
+    const sendPrompt = () => {
+        window.alert(prompt);
+    }
 
     return (
         <>
-            <div className='h-screen flex items-center justify-center'>
-                <Button>Test</Button>
+            <div className='main-container'>
+                <div className='chat-container'>
+                    <Textarea rows={10} placeholder="Type your message here." value={prompt} onChange={(e) => handlePromptChange(e)} />
+                    <Button className="float-right mt-3" onClick={sendPrompt} disabled={prompt === ""}>Send</Button>
+                </div>
             </div>
         </>
     );
