@@ -11,11 +11,23 @@
     max-width: 658px;
 }
 
+.fetching-skeleton {
+    margin: 0 auto;
+    max-width: 658px;
+    height: 300px;
+}
+
 .output-container {
     margin: 0 auto;
     max-width: 658px;
 
     .output-p {
         line-height: 32px;
+    }
+
+    .output-span {
+        border-radius: 1rem;
+        padding-bottom: 0.2rem;
+        cursor: pointer;
     }
 }

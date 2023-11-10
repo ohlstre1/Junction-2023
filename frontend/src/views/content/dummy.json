@@ -6,12 +6,17 @@
     },
     {
         "sentence": "Here's an interesting fact about Finnish winter weather",
-        "trust_score": 0.00,
+        "trust_score": 0.50,
         "ref": "None"
     },
     {
         "sentence": "A notable phenomenon in Lapland is the 'polar night,' where the sun doesn't rise above the horizon, leading to prolonged darkness.",
         "trust_score": 0.87,
         "ref": "doc_id_20"
+    },
+    {
+        "sentence": "During the days it can get up to 20 degree celsius hot.",
+        "trust_score": 0.02,
+        "ref": "None"
     }
 ]
