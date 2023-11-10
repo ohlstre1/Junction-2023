@@ -5,6 +5,7 @@ import ValidatedOutput, {SentenceData} from './ValidatedOutput';
 import {Skeleton} from '@/components/ui/skeleton';
 import dummy from './dummy.json';
 import './Content.scss';
+import DisplaySource from './DisplaySource';
 
 const Demo = () => {
     const [prompt, setPrompt] = useState('');
@@ -62,6 +63,7 @@ const Demo = () => {
                         />
                     )}
                 </div>
+                <DisplaySource />
             </div>
         </>
     );

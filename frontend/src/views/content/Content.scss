@@ -1,4 +1,5 @@
 .main-container {
+    position: relative;
     width: 100%;
     height: calc(100% - 72px);
     width: 100%;
@@ -38,5 +39,37 @@
         border-radius: 1rem;
         padding-bottom: 0.2rem;
         cursor: pointer;
+
+        &:hover {
+            background-color: hsla(210, 40%, 98%, 0.33)
+        }
+    }
+}
+
+.source-container {
+    position: relative;
+    background: rgba(var(--foreground), 0.8);
+    height: 100%;
+    width: 500px;
+    position: absolute;
+    top: 0;
+    right: -500px;
+    /* Initially off-screen on the right */
+    animation: slideIn 0.5s forwards;
+    /* Animation duration and fill-mode */
+
+    /* Additional styling (you can customize these styles as needed) */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    overflow-y: auto;
+}
+
+@keyframes slideIn {
+    from {
+        right: -500px;
+    }
+
+    to {
+        right: 0;
     }
 }
