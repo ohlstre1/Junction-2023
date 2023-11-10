@@ -1,0 +1,17 @@
+[
+    {
+        "sentence": "Finland experiences a cold and snowy winter due to its location in the northern part of Europe",
+        "trust_score": 0.99,
+        "ref": "doc_id_1"
+    },
+    {
+        "sentence": "Here's an interesting fact about Finnish winter weather",
+        "trust_score": 0.00,
+        "ref": "None"
+    },
+    {
+        "sentence": "A notable phenomenon in Lapland is the 'polar night,' where the sun doesn't rise above the horizon, leading to prolonged darkness.",
+        "trust_score": 0.87,
+        "ref": "doc_id_20"
+    }
+]
