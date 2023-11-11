@@ -62,10 +62,8 @@ async def similar_sentence():
     content = request.get_json()["content"].split(".")
     match, similarity = await find_similar_sentence(sentence, content)
 
-    print(match)
-    print(similarity)
 
-    return "jee"
+    return json.dumps({ "similar_sentence": match, "confidence": str(similarity) })
 
 @app.route('/openai_validate', methods=['POST'])
 async def openai_validate():
