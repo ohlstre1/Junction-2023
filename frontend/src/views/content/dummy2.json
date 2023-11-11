@@ -1,6 +1,46 @@
 [
     {
-        "name": "state_of_the_union",
+        "name": "state_of_the_union_1",
+        "sources": [
+            {
+                "name": "State of the union github",
+                "source": "https://github.com/hwchase17/chat-your-data/blob/master/state_of_the_union.txt",
+                "docType": "url"
+            },
+            {
+                "name": "souce2",
+                "source": "filename.pdf",
+                "docType": "pdf"
+            }
+        ]
+    },
+    {
+        "name": "state_of_the_union_2",
+        "sources": [
+            {
+                "name": "State of the union github",
+                "source": "https://github.com/hwchase17/chat-your-data/blob/master/state_of_the_union.txt",
+                "docType": "url"
+            },
+            {
+                "name": "souce2",
+                "source": "filename.pdf",
+                "docType": "pdf"
+            },
+            {
+                "name": "State of the union github",
+                "source": "https://github.com/hwchase17/chat-your-data/blob/master/state_of_the_union.txt",
+                "docType": "url"
+            },
+            {
+                "name": "souce2",
+                "source": "filename.pdf",
+                "docType": "pdf"
+            }
+        ]
+    },
+    {
+        "name": "state_of_the_union_3",
         "sources": [
             {
                 "name": "State of the union github",

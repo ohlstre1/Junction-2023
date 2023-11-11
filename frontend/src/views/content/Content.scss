@@ -58,6 +58,11 @@
     position: fixed;
     bottom: 0;
     left: 0;
+
+    .left-sidebar-content {
+        height: calc(100% - 64px);
+        overflow: auto;
+    }
 }
 
 .source-container {

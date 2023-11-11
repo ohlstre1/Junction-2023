@@ -21,7 +21,7 @@ type DatabaseData = {
 
 const DatabaseSideNav = () => {
     const [databases, setDatabases] = useState<DatabaseData[]>(dummy)
-    const [selectedDatabaseName, setSelectedDatabaseName] = useState<string>("");
+    const [selectedDatabaseNames, setSelectedDatabaseNames] = useState<string[]>([]);
 
     const snakeCaseToWords = (input: string): string => {
         const words = input.split('_');
@@ -30,56 +30,56 @@ const DatabaseSideNav = () => {
     }
 
     const updateSelectedDatabaseName = (name: string) => {
-        if (selectedDatabaseName === name) {
-            setSelectedDatabaseName("");
-            return
+        // Check if the name is already in the list
+        const isNameSelected = selectedDatabaseNames.includes(name);
+
+        // If the name is already selected, remove it; otherwise, add it
+        if (isNameSelected) {
+            // Remove the name from the list
+            setSelectedDatabaseNames(selectedDatabaseNames.filter(n => n !== name));
+        } else {
+            // Add the name to the list
+            setSelectedDatabaseNames([...selectedDatabaseNames, name]);
         }
-        setSelectedDatabaseName(name);
     }
 
     return (
         <div className="left-sidebar-container">
-            <h2 className="mt-3 mb-2 px-4 text-lg font-semibold tracking-tight">
-                Databases
-            </h2>
-            <div className="space-y-1 p-2">
-                {databases.map((database) => (
-                    <Collapsible>
-                        <CollapsibleTrigger asChild key={database.name}>
-                            <Button
-                                className="w-full justify-between"
-                                onClick={() => updateSelectedDatabaseName(database.name)}
-                            >{snakeCaseToWords(database.name)}
-                                {selectedDatabaseName === database.name ?
-                                    <ChevronUp className="h-4 w-4" />
-                                    :
-                                    <ChevronDown className="h-4 w-4" />
-                                }
-                            </Button>
+            <div className="left-sidebar-content">
+                <h2 className="mt-3 mb-2 px-4 text-lg font-semibold tracking-tight">
+                    Databases
+                </h2>
+                <div className="space-y-1 p-2">
+                    {databases.map((database) => (
+                        <Collapsible>
+                            <CollapsibleTrigger asChild key={database.name}>
+                                <Button
+                                    className="w-full justify-between"
+                                    onClick={() => updateSelectedDatabaseName(database.name)}
+                                >{snakeCaseToWords(database.name)}
+                                    {selectedDatabaseNames.includes(database.name) ?
+                                        <ChevronUp className="h-4 w-4" />
+                                        :
+                                        <ChevronDown className="h-4 w-4" />
+                                    }
+                                </Button>
 
-                        </CollapsibleTrigger>
-                        {database.sources.map((source) => {
-                            return (
-                                <CollapsibleContent className="ml-3" key={source.name}>
-                                    <Button variant="outline" size="sm" className="w-full justify-start">{snakeCaseToWords(source.name)}</Button>
-                                </CollapsibleContent>
-                            )
-                        })}
+                            </CollapsibleTrigger>
+                            {database.sources.map((source) => {
+                                return (
+                                    <CollapsibleContent className="ml-3" key={source.name}>
+                                        <Button variant="outline" size="sm" className="w-full justify-start">{snakeCaseToWords(source.name)}</Button>
+                                    </CollapsibleContent>
+                                )
+                            })}
 
-                    </Collapsible>
-                    // <Button
-                    //     key={index}
-                    //     variant="ghost"
-                    //     // className={`w-full justify-between font-normal ${imageName === labelDrawerStore.selectedImage
-                    //     //     ? 'bg-accent'
-                    //     //     : ''
-                    //     //     }`}
-                    //     className={`w-full justify-between font-normal`}
-                    // // onClick={() => handleImageSelection(imageName)}
-                    // >
-                    //     {database.name}
-                    // </Button>
-                ))}
+                        </Collapsible>
+                    ))}
+                </div>
+            </div>
+            <div className="w-full flex justify-around p-3">
+                <Button>Upload</Button>
+                <Button>Create DB</Button>
             </div>
         </div>
     )
