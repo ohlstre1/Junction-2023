@@ -1,1 +1,40 @@
-[{"name": "state_of_the_union", "id": "0", "sources": [{"name": "State of the union github", "source": "https://github.com/hwchase17/chat-your-data/blob/master/state_of_the_union.txt", "docTypte": "url"}, {"name": "union file", "source": "filename.pdf", "docType": "pdf"}]}, {"name": "Helsinki", "id": "1", "sources": [{"name": "helsinki wikipedia", "source": "https://en.wikipedia.org/wiki/Helsinki", "docTypte": "url"}, {"name": "VM", "source": "https://vm.fi/en/frontpage", "docType": "url"}]}]
+[
+    {
+        "name": "state_of_the_union",
+        "id": "0",
+        "sources": [
+            {
+                "name": "State of the union github",
+                "source": "https://raw.githubusercontent.com/hwchase17/chat-your-data/master/state_of_the_union.txt",
+                "docTypte": "url"
+            }
+        ]
+    },
+    {
+        "name": "Helsinki",
+        "id": "1",
+        "sources": [
+            {
+                "name": "helsinki wikipedia",
+                "source": "https://en.wikipedia.org/wiki/Helsinki",
+                "docTypte": "url"
+            },
+            {
+                "name": "VM",
+                "source": "https://vm.fi/en/frontpage",
+                "docType": "url"
+            }
+        ]
+    },
+    {
+        "name": "finnish_climate",
+        "id": "2",
+        "sources": [
+            {
+                "name": "Infofinland finnish climate",
+                "source": "https://www.infofinland.fi/en/information-about-finland/finnish-climate",
+                "docTypte": "url"
+            }
+        ]
+    }
+]
