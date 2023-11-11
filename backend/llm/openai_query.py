@@ -7,7 +7,7 @@ from .llm import vector_search
 from data.dictionary import query_dict
 
 template = """Given a question defined below, give a proper and a well-grounded answer.
-Additionally, you are given information of data split up into pieces that you should base your answer on.
+Additionally, you are given information of data split up into pieces that you should base your answer on if it is relevant to the question.
 DO NOT USE ANY OTHER INFORMATION! Only answer based on the given information pieces.
 Your answer should try to include as much word-by-word phrases from the given information.
 
@@ -21,7 +21,9 @@ Question: {question}
 
 Information: {context}
 
-Answer: Include your answer, and specific parts of the information given you checked against."""
+Only use Information if it is relevant to the question
+
+Answer: Include your answer, and specific parts of the relevant information given you checked against."""
 
 async def create_info(source):
     info = ""
