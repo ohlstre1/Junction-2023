@@ -12,11 +12,15 @@ import {
 } from "@/components/ui/hover-card"
 import './Nav.scss';
 import { Button } from "@/components/ui/button";
+import AppLogo from "@/components/AppLogo";
 
 const Nav = () => {
     return (
         <nav className="flex items-center justify-between align-center p-4">
             <div className="flex items-center">
+                <div className="app-logo">
+                    <AppLogo />
+                </div>
                 <h3 className="m-0 pl-2">AIAI CAPTAIN</h3>
             </div>
             <div className="flex items-center">
@@ -35,7 +39,7 @@ const Nav = () => {
                                 <AvatarFallback>VC</AvatarFallback>
                             </Avatar>
                             <div className="space-y-2">
-                                <h4 className="text-sm font-semibold">Nybbbbe</h4>
+                                <h4 className="text-sm font-semibold">Spongebob Squarepants</h4>
                                 <Button className="w-[100%] mt-5 mb-5">Edit</Button>
                                 <Button className="w-[100%] mt-5 mb-5">Sign Out</Button>
                                 <div className="flex items-center pt-2">
