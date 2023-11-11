@@ -29,19 +29,20 @@ const DatabaseSideNav = () => {
     const [error, setError] = useState<any>(null);
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get('http://localhost:5000/sources');
-                setDatabases(response.data);
-            } catch (error) {
-                setError(error);
-            } finally {
-                setLoading(false);
-            }
-        };
-
         fetchData();
     }, []);
+
+    const fetchData = async () => {
+        setDatabases([]);
+        try {
+            const response = await axios.get('http://localhost:5000/sources');
+            setDatabases(response.data);
+        } catch (error) {
+            setError(error);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     if (loading) {
         return <p>Loading...</p>;
@@ -102,7 +103,7 @@ const DatabaseSideNav = () => {
                     </div>
                 </div>
                 <div className="w-full flex justify-around p-3">
-                    <UploadDialog />
+                    <UploadDialog refresh={() => fetchData()} />
                     <Button>Create DB</Button>
                 </div>
             </div>

@@ -33,7 +33,11 @@ interface UploadURL {
     url: string
 }
 
-export function UploadDialog() {
+export interface UploadDialogProps {
+    refresh: () => void;
+}
+
+export function UploadDialog({ refresh }: UploadDialogProps) {
     const [dialogOpen, setDialogOpen] = useState(false);
     const [databaseNames, setDatabaseNames] = useState<string[]>([]);
     const [uploadURLData, setUploadURLData] = useState<UploadURL>({
@@ -86,6 +90,7 @@ export function UploadDialog() {
             })
 
             setDialogOpen(false);
+            refresh();
         } catch (error) {
             console.error('Error uploading data:', error);
         }
