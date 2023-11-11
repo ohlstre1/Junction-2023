@@ -22,9 +22,8 @@ type DatabaseData = {
 };
 
 const DatabaseSideNav = () => {
-    const [databases, setDatabases] = useState<DatabaseData[]>(dummy)
+    const [databases, setDatabases] = useState<DatabaseData[]>([]);
     const [selectedDatabaseNames, setSelectedDatabaseNames] = useState<string[]>([]);
-    const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<any>(null);
 
@@ -32,7 +31,7 @@ const DatabaseSideNav = () => {
         const fetchData = async () => {
             try {
                 const response = await axios.get('http://localhost:5000/sources');
-                setData(response.data);
+                setDatabases(response.data);
             } catch (error) {
                 setError(error);
             } finally {
