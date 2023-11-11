@@ -1,6 +1,6 @@
 query_dict = {
     1: {
-        "query": "Did biden say this: 'the State of the Union is strong—because you, the American people, are strong'",
+        "query": "What is current the state of the union?",
         "faiss_files": "./faiss/state_of_the_union"
     },
     2: {
