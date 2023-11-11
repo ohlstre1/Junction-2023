@@ -7,6 +7,8 @@ import {
 import { useState } from "react";
 import dummy from './dummy2.json';
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { RadioGroup, RadioGroupItem } from "@radix-ui/react-radio-group";
+import { Label } from "@radix-ui/react-label";
 
 type DatabaseSource = {
     name: string;
@@ -47,7 +49,7 @@ const DatabaseSideNav = () => {
         <div className="left-sidebar-container">
             <div className="left-sidebar-content">
                 <h2 className="mt-3 mb-2 px-4 text-lg font-semibold tracking-tight">
-                    Databases
+                    Your Data:
                 </h2>
                 <div className="space-y-1 p-2">
                     {databases.map((database) => (
@@ -56,7 +58,8 @@ const DatabaseSideNav = () => {
                                 <Button
                                     className="w-full justify-between"
                                     onClick={() => updateSelectedDatabaseName(database.name)}
-                                >{snakeCaseToWords(database.name)}
+                                >
+                                    {snakeCaseToWords(database.name)}
                                     {selectedDatabaseNames.includes(database.name) ?
                                         <ChevronUp className="h-4 w-4" />
                                         :
