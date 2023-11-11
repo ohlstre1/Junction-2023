@@ -6,9 +6,9 @@ from dotenv import load_dotenv
 from langchain.embeddings.openai import OpenAIEmbeddings
 from llm.llm import vector_search
 from llm.datasaver import datasaver, datasaver_url
-import json
 from llm.openai_query import openai_query
 import timeit
+import json
 
 app = Flask(__name__)
 
@@ -68,7 +68,7 @@ async def openai_validate(number):
     stop = timeit.default_timer()
 
     print('Time: ', stop - start)  
-    return "jee"
+    return json.dumps(docs)
 
 @app.route('/upload/url', methods=['POST'])
 def upload_url():

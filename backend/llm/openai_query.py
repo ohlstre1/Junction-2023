@@ -23,9 +23,9 @@ Information: {context}
 
 Answer: Include your answer, and specific parts of the information given you checked against."""
 
-async def create_info(sources):
+async def create_info(source):
     info = ""
-    for doc in sources:
+    for doc in source:
         info = info + doc[0].page_content + "\n\n END OF THIS PIECE! \n\n"
     return info
 
