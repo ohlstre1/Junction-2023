@@ -1,0 +1,17 @@
+[
+    {
+        "name": "state_of_the_union",
+        "sources": [
+            {
+                "name": "State of the union github",
+                "source": "https://github.com/hwchase17/chat-your-data/blob/master/state_of_the_union.txt",
+                "docType": "url"
+            },
+            {
+                "name": "souce2",
+                "source": "filename.pdf",
+                "docType": "pdf"
+            }
+        ]
+    }
+]

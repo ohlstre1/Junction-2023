@@ -1,11 +1,12 @@
-import {useState} from 'react';
-import {Textarea} from '@/components/ui/textarea';
-import {Button} from '@/components/ui/button';
-import ValidatedOutput, {SentenceData} from './ValidatedOutput';
-import {Skeleton} from '@/components/ui/skeleton';
+import { useState } from 'react';
+import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
+import ValidatedOutput, { SentenceData } from './ValidatedOutput';
+import { Skeleton } from '@/components/ui/skeleton';
 import dummy from './dummy.json';
 import './Content.scss';
 import DisplaySource from './DisplaySource';
+import DatabaseSideNav from './DatabaseSideNav';
 
 const Demo = () => {
     const [prompt, setPrompt] = useState('');
@@ -36,6 +37,7 @@ const Demo = () => {
     return (
         <>
             <div className="main-container">
+                <DatabaseSideNav />
                 <div className="content-container">
                     {!result ? (
                         <>
@@ -50,7 +52,7 @@ const Demo = () => {
                                     <Button
                                         className="float-right mt-3 pb-3 "
                                         onClick={sendPrompt}
-                                        // disabled={prompt === ""}
+                                    // disabled={prompt === ""}
                                     >
                                         Send
                                     </Button>
