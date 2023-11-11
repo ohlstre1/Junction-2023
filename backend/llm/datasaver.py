@@ -51,10 +51,38 @@ def datasaver_url(dataset, name, url):
 
         f = open('./faiss/sources.json')
         sources = json.load(f)
+        f.close()
+        new_dataset = True
         for d in sources:
             if d["name"] == dataset:
+                new_dataset = False
                 for s in d["sources"]:
                     urls.append(s["source"])
+                d["sources"].append(
+                    {
+                    "name": name,
+                    "source": url,
+                    "docType": "url"
+                    }
+                )   
+                    
+        if(new_dataset):
+            sources.append(
+                {
+                    "name": dataset,
+                     "id": str(len(sources)),
+                    "sources": [
+                    {
+                        "name": name,
+                        "source": url,
+                        "docTypte": "url"
+                    }]
+                }
+            )
+
+        with open("./faiss/sources.json", "w") as outfile:
+            json.dump(sources, outfile)
+
 
         raw_documents = SeleniumURLLoader(urls=urls).load()
         text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
