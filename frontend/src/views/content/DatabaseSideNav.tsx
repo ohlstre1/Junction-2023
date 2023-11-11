@@ -9,6 +9,7 @@ import dummy from './dummy2.json';
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { RadioGroup, RadioGroupItem } from "@radix-ui/react-radio-group";
 import { Label } from "@radix-ui/react-label";
+import { UploadDialog } from "./UploadDialog";
 
 type DatabaseSource = {
     name: string;
@@ -46,45 +47,47 @@ const DatabaseSideNav = () => {
     }
 
     return (
-        <div className="left-sidebar-container">
-            <div className="left-sidebar-content">
-                <h2 className="mt-3 mb-2 px-4 text-lg font-semibold tracking-tight">
-                    Your Data:
-                </h2>
-                <div className="space-y-1 p-2">
-                    {databases.map((database) => (
-                        <Collapsible>
-                            <CollapsibleTrigger asChild key={database.name}>
-                                <Button
-                                    className="w-full justify-between"
-                                    onClick={() => updateSelectedDatabaseName(database.name)}
-                                >
-                                    {snakeCaseToWords(database.name)}
-                                    {selectedDatabaseNames.includes(database.name) ?
-                                        <ChevronUp className="h-4 w-4" />
-                                        :
-                                        <ChevronDown className="h-4 w-4" />
-                                    }
-                                </Button>
+        <>
+            <div className="left-sidebar-container">
+                <div className="left-sidebar-content">
+                    <h2 className="mt-3 mb-2 px-4 text-lg font-semibold tracking-tight">
+                        Your Data:
+                    </h2>
+                    <div className="space-y-1 p-2">
+                        {databases.map((database) => (
+                            <Collapsible>
+                                <CollapsibleTrigger asChild key={database.name}>
+                                    <Button
+                                        className="w-full justify-between"
+                                        onClick={() => updateSelectedDatabaseName(database.name)}
+                                    >
+                                        {snakeCaseToWords(database.name)}
+                                        {selectedDatabaseNames.includes(database.name) ?
+                                            <ChevronUp className="h-4 w-4" />
+                                            :
+                                            <ChevronDown className="h-4 w-4" />
+                                        }
+                                    </Button>
 
-                            </CollapsibleTrigger>
-                            {database.sources.map((source) => {
-                                return (
-                                    <CollapsibleContent className="ml-3" key={source.name}>
-                                        <Button variant="outline" size="sm" className="w-full justify-start">{snakeCaseToWords(source.name)}</Button>
-                                    </CollapsibleContent>
-                                )
-                            })}
+                                </CollapsibleTrigger>
+                                {database.sources.map((source) => {
+                                    return (
+                                        <CollapsibleContent className="ml-3" key={source.name}>
+                                            <Button variant="outline" size="sm" className="w-full justify-start">{snakeCaseToWords(source.name)}</Button>
+                                        </CollapsibleContent>
+                                    )
+                                })}
 
-                        </Collapsible>
-                    ))}
+                            </Collapsible>
+                        ))}
+                    </div>
+                </div>
+                <div className="w-full flex justify-around p-3">
+                    <UploadDialog />
+                    <Button>Create DB</Button>
                 </div>
             </div>
-            <div className="w-full flex justify-around p-3">
-                <Button>Upload</Button>
-                <Button>Create DB</Button>
-            </div>
-        </div>
+        </>
     )
 }
 
