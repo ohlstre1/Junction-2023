@@ -12,8 +12,7 @@ Additionally, you are given information of data split up into pieces that you sh
 DO NOT USE ANY OTHER INFORMATION! Only answer based on the given information pieces.
 Your answer should try to include as much word-by-word phrases from the given information.
 
-The information is given in the following form: 
-information text + 2 whitespaces + "END OF THIS PIECE!" + 2 whitespaces
+The information is given in the following form:
 
 The various information pieces may contain overlap in information. That is okay.
 
@@ -30,7 +29,7 @@ async def create_info(source):
     rough_max_char = rough_maximum_tokens * 3.8 # 1 token ~= 4 chars
     info = ""
     for doc in source:
-        info = info + doc[0].page_content + "\n\n END OF THIS PIECE! \n\n"
+        info = info + doc[0].page_content + "\n\n"
 
     lines = textwrap.fill(info, rough_max_char)
     return lines
