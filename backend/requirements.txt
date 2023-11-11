@@ -7,3 +7,4 @@ tiktoken
 flask[async]
 selenium
 flask-requests
+Flask-cors

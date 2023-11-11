@@ -1,4 +1,5 @@
 from flask import Flask, request
+from flask_cors import CORS
 from langchain.vectorstores import FAISS
 import os
 from dotenv import load_dotenv
@@ -10,6 +11,9 @@ from llm.openai_query import openai_query
 import timeit
 
 app = Flask(__name__)
+
+CORS(app)
+
 
 # from markupsafe import escape
 
