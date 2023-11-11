@@ -25,6 +25,7 @@ import {
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { snakeCaseToWords } from "./utils"
+import { Loader2 } from "lucide-react"
 
 interface UploadURL {
     dataset: string,
@@ -33,14 +34,14 @@ interface UploadURL {
 }
 
 export function UploadDialog() {
+    const [dialogOpen, setDialogOpen] = useState(false);
     const [databaseNames, setDatabaseNames] = useState<string[]>([]);
     const [uploadURLData, setUploadURLData] = useState<UploadURL>({
         dataset: "",
         name: "",
         url: ""
     })
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<any>(null);
+    const [upLoading, setUpLoading] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -48,9 +49,7 @@ export function UploadDialog() {
                 const response = await axios.get('http://localhost:5000/sources');
                 setDatabaseNames(response.data.map((d: any) => d.name));
             } catch (error) {
-                setError(error);
-            } finally {
-                setLoading(false);
+                console.log(error);
             }
         };
 
@@ -58,11 +57,15 @@ export function UploadDialog() {
     }, []);
 
     const handleUpload = async () => {
+        if (upLoading) {
+            return
+        }
         if (uploadURLData.dataset === "" || uploadURLData.name === "" || uploadURLData.url === "") {
             console.log("Error in handleUpload values");
             return
         }
         try {
+            setUpLoading(true);
             const formData = new FormData();
             formData.append('dataset', uploadURLData.dataset);
             formData.append('name', uploadURLData.name);
@@ -81,6 +84,8 @@ export function UploadDialog() {
                 name: "",
                 url: ""
             })
+
+            setDialogOpen(false);
         } catch (error) {
             console.error('Error uploading data:', error);
         }
@@ -98,18 +103,16 @@ export function UploadDialog() {
     }
 
     return (
-        <Dialog>
-            <DialogTrigger asChild>
-                <Button>Upload</Button>
-            </DialogTrigger>
+        <Dialog open={dialogOpen} onOpenChange={setDialogOpen} >
+            <Button onClick={() => setDialogOpen(!dialogOpen)}>Upload</Button>
             <DialogContent className="sm:max-w-[425px]">
-                <DialogHeader>
+                <DialogHeader >
                     <DialogTitle>Upload Data</DialogTitle>
                     {/* <DialogDescription>
                         Make changes to your profile here. Click save when you're done.
                     </DialogDescription> */}
                 </DialogHeader>
-                <Tabs defaultValue="url" className="w-[400px]">
+                <Tabs defaultValue="url">
                     <TabsList className="grid w-full grid-cols-2">
                         <TabsTrigger value="url">URL</TabsTrigger>
                         <TabsTrigger value="file">FILE</TabsTrigger>
@@ -141,7 +144,16 @@ export function UploadDialog() {
                     </TabsContent>
                 </Tabs>
                 <DialogFooter>
-                    <Button type="submit" onClick={() => handleUpload()}>Upload</Button>
+
+                    <Button type="submit" onClick={() => handleUpload()}>
+                        {upLoading ?
+                            <Loader2 className="spinner" />
+                            :
+                            <>
+                                Upload
+                            </>
+                        }
+                    </Button>
                 </DialogFooter>
             </DialogContent>
         </Dialog>
