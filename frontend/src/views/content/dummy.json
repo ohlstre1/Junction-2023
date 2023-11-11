@@ -1,22 +1,177 @@
 [
     {
-        "sentence": "Finland experiences a cold and snowy winter due to its location in the northern part of Europe",
-        "trust_score": 0.99,
-        "ref": "doc_id_1"
+        "sentence": "In Finland, the winter months are December, January and February.",
+        "docs": [
+            {
+                "content": "Information about Finland\n\nInformation about Finland\n\nFinnish climate\n\nSuomen ilmasto\n\nFinnish climate\n\n28.04.2022\n\nThe Finnish climate is colder than in many other countries. However, the weather varies significantly in different seasons. Finland has a lot of nature, and you can enjoy and explore nature in all seasons.\n\nWinter\n\nSpring\n\nSummer\n\nAutumn\n\nWinter\n\nIn Finland, the winter months are December, January and February. The weather is also cold in November and March. The temperature is often below zero degrees Celsius in winter and can fall to -20 degrees Celsius. In Northern Finland, it is colder than in Southern Finland and the temperature can be as low as -30\u00b0C. It can snow in winter. The ground is often frozen and slippery.\n\nDress warmly in winter. At least wear a warm winter jacket, a hat and gloves, a scarf and warm winter shoes. You should wear several layers of clothing in cold weather.",
+                "distance": "0.24945682",
+                "ref": "https://www.infofinland.fi/en/information-about-finland/finnish-climate"
+            },
+            {
+                "content": "The summer months in Finland are June, July and August. The warmest month is often July. In Southern Finland, the average temperature in the summer is about 20\u00b0C while the temperature in the north is about 15\u00b0C.\n\nEvenings and nights are bright in Finland during the summer, as the sun sets late and rises early. Then, Northern Finland has more daylight hours than Southern Finland. The month with the most daylight is June. In Finland, Midsummer, the night of the midnight sun, is celebrated in June. In the northernmost part of Finland, the sun does not set at all in early summer.\n\nIf you find it hard to sleep in too much light, get blackout curtains for your bedroom.\n\nAutumn\n\nAutumn normally begins at the end of August or the beginning of September. September and October are a time of autumn colours in Finland. Many leaves of plants and trees, which are green in the summer, turn yellow, orange and red. In the time of autumn colours, nature is beautiful and colourful.",
+                "distance": "0.26694834",
+                "ref": "https://www.infofinland.fi/en/information-about-finland/finnish-climate"
+            },
+            {
+                "content": "In Finland, it is often dark in the winter because the sun rises late in the morning and sets in the afternoon. Winter days are darker in Northern Finland than in Southern Finland. In the northernmost part of Finland, the sun does not rise at all for several weeks.\n\nThe lack of daylight can make people tired and anxious. You can make yourself feel better in many different ways.\n\nKeep in touch with your family and friends.\n\nExercise regularly.\n\nEat healthy.\n\nMake sure you get enough vitamin D.\n\nGet a bright light therapy lamp.\n\nLink redirects to another websiteFinnish Institute for Heath and Welfare\n\nHow to stay well in winter, a guideLink redirects to another website\n\nFinnish\n\nSpring\n\nIn Southern Finland, spring begins at the end of March whereas, in the north, spring comes at the end of April. The spring weather is often cool, but warmer than in winter. In spring, nature changes a lot. The snow melts and nature becomes green as plants and trees grow leaves.\n\nSummer",
+                "distance": "0.2899519",
+                "ref": "https://www.infofinland.fi/en/information-about-finland/finnish-climate"
+            },
+            {
+                "content": "In autumn, the weather is cool and often rainy and windy. The Finnish autumn is also dark because the sun sets earlier than in the summer.\n\nLink redirects to another websiteFinnish Meteorological Institute\n\nInformation about the Finnish climateLink redirects to another website\n\nFinnish\n\nSwedish\n\nEnglish",
+                "distance": "0.33694807",
+                "ref": "https://www.infofinland.fi/en/information-about-finland/finnish-climate"
+            }
+        ]
     },
     {
-        "sentence": "Here's an interesting fact about Finnish winter weather",
-        "trust_score": 0.50,
-        "ref": "None"
+        "sentence": "The weather is also cold in November and March.",
+        "docs": [
+            {
+                "content": "Information about Finland\n\nInformation about Finland\n\nFinnish climate\n\nSuomen ilmasto\n\nFinnish climate\n\n28.04.2022\n\nThe Finnish climate is colder than in many other countries. However, the weather varies significantly in different seasons. Finland has a lot of nature, and you can enjoy and explore nature in all seasons.\n\nWinter\n\nSpring\n\nSummer\n\nAutumn\n\nWinter\n\nIn Finland, the winter months are December, January and February. The weather is also cold in November and March. The temperature is often below zero degrees Celsius in winter and can fall to -20 degrees Celsius. In Northern Finland, it is colder than in Southern Finland and the temperature can be as low as -30\u00b0C. It can snow in winter. The ground is often frozen and slippery.\n\nDress warmly in winter. At least wear a warm winter jacket, a hat and gloves, a scarf and warm winter shoes. You should wear several layers of clothing in cold weather.",
+                "distance": "0.36087978",
+                "ref": "https://www.infofinland.fi/en/information-about-finland/finnish-climate"
+            },
+            {
+                "content": "In autumn, the weather is cool and often rainy and windy. The Finnish autumn is also dark because the sun sets earlier than in the summer.\n\nLink redirects to another websiteFinnish Meteorological Institute\n\nInformation about the Finnish climateLink redirects to another website\n\nFinnish\n\nSwedish\n\nEnglish",
+                "distance": "0.36210945",
+                "ref": "https://www.infofinland.fi/en/information-about-finland/finnish-climate"
+            },
+            {
+                "content": "In Finland, it is often dark in the winter because the sun rises late in the morning and sets in the afternoon. Winter days are darker in Northern Finland than in Southern Finland. In the northernmost part of Finland, the sun does not rise at all for several weeks.\n\nThe lack of daylight can make people tired and anxious. You can make yourself feel better in many different ways.\n\nKeep in touch with your family and friends.\n\nExercise regularly.\n\nEat healthy.\n\nMake sure you get enough vitamin D.\n\nGet a bright light therapy lamp.\n\nLink redirects to another websiteFinnish Institute for Heath and Welfare\n\nHow to stay well in winter, a guideLink redirects to another website\n\nFinnish\n\nSpring\n\nIn Southern Finland, spring begins at the end of March whereas, in the north, spring comes at the end of April. The spring weather is often cool, but warmer than in winter. In spring, nature changes a lot. The snow melts and nature becomes green as plants and trees grow leaves.\n\nSummer",
+                "distance": "0.39183027",
+                "ref": "https://www.infofinland.fi/en/information-about-finland/finnish-climate"
+            },
+            {
+                "content": "The summer months in Finland are June, July and August. The warmest month is often July. In Southern Finland, the average temperature in the summer is about 20\u00b0C while the temperature in the north is about 15\u00b0C.\n\nEvenings and nights are bright in Finland during the summer, as the sun sets late and rises early. Then, Northern Finland has more daylight hours than Southern Finland. The month with the most daylight is June. In Finland, Midsummer, the night of the midnight sun, is celebrated in June. In the northernmost part of Finland, the sun does not set at all in early summer.\n\nIf you find it hard to sleep in too much light, get blackout curtains for your bedroom.\n\nAutumn\n\nAutumn normally begins at the end of August or the beginning of September. September and October are a time of autumn colours in Finland. Many leaves of plants and trees, which are green in the summer, turn yellow, orange and red. In the time of autumn colours, nature is beautiful and colourful.",
+                "distance": "0.42611742",
+                "ref": "https://www.infofinland.fi/en/information-about-finland/finnish-climate"
+            }
+        ]
     },
     {
-        "sentence": "A notable phenomenon in Lapland is the 'polar night,' where the sun doesn't rise above the horizon, leading to prolonged darkness.",
-        "trust_score": 0.87,
-        "ref": "doc_id_20"
+        "sentence": "The temperature is often below zero degrees Celsius in winter and can fall to -20 degrees Celsius.",
+        "docs": [
+            {
+                "content": "Information about Finland\n\nInformation about Finland\n\nFinnish climate\n\nSuomen ilmasto\n\nFinnish climate\n\n28.04.2022\n\nThe Finnish climate is colder than in many other countries. However, the weather varies significantly in different seasons. Finland has a lot of nature, and you can enjoy and explore nature in all seasons.\n\nWinter\n\nSpring\n\nSummer\n\nAutumn\n\nWinter\n\nIn Finland, the winter months are December, January and February. The weather is also cold in November and March. The temperature is often below zero degrees Celsius in winter and can fall to -20 degrees Celsius. In Northern Finland, it is colder than in Southern Finland and the temperature can be as low as -30\u00b0C. It can snow in winter. The ground is often frozen and slippery.\n\nDress warmly in winter. At least wear a warm winter jacket, a hat and gloves, a scarf and warm winter shoes. You should wear several layers of clothing in cold weather.",
+                "distance": "0.2951659",
+                "ref": "https://www.infofinland.fi/en/information-about-finland/finnish-climate"
+            },
+            {
+                "content": "In autumn, the weather is cool and often rainy and windy. The Finnish autumn is also dark because the sun sets earlier than in the summer.\n\nLink redirects to another websiteFinnish Meteorological Institute\n\nInformation about the Finnish climateLink redirects to another website\n\nFinnish\n\nSwedish\n\nEnglish",
+                "distance": "0.38083047",
+                "ref": "https://www.infofinland.fi/en/information-about-finland/finnish-climate"
+            },
+            {
+                "content": "In Finland, it is often dark in the winter because the sun rises late in the morning and sets in the afternoon. Winter days are darker in Northern Finland than in Southern Finland. In the northernmost part of Finland, the sun does not rise at all for several weeks.\n\nThe lack of daylight can make people tired and anxious. You can make yourself feel better in many different ways.\n\nKeep in touch with your family and friends.\n\nExercise regularly.\n\nEat healthy.\n\nMake sure you get enough vitamin D.\n\nGet a bright light therapy lamp.\n\nLink redirects to another websiteFinnish Institute for Heath and Welfare\n\nHow to stay well in winter, a guideLink redirects to another website\n\nFinnish\n\nSpring\n\nIn Southern Finland, spring begins at the end of March whereas, in the north, spring comes at the end of April. The spring weather is often cool, but warmer than in winter. In spring, nature changes a lot. The snow melts and nature becomes green as plants and trees grow leaves.\n\nSummer",
+                "distance": "0.39716417",
+                "ref": "https://www.infofinland.fi/en/information-about-finland/finnish-climate"
+            },
+            {
+                "content": "The summer months in Finland are June, July and August. The warmest month is often July. In Southern Finland, the average temperature in the summer is about 20\u00b0C while the temperature in the north is about 15\u00b0C.\n\nEvenings and nights are bright in Finland during the summer, as the sun sets late and rises early. Then, Northern Finland has more daylight hours than Southern Finland. The month with the most daylight is June. In Finland, Midsummer, the night of the midnight sun, is celebrated in June. In the northernmost part of Finland, the sun does not set at all in early summer.\n\nIf you find it hard to sleep in too much light, get blackout curtains for your bedroom.\n\nAutumn\n\nAutumn normally begins at the end of August or the beginning of September. September and October are a time of autumn colours in Finland. Many leaves of plants and trees, which are green in the summer, turn yellow, orange and red. In the time of autumn colours, nature is beautiful and colourful.",
+                "distance": "0.39781618",
+                "ref": "https://www.infofinland.fi/en/information-about-finland/finnish-climate"
+            }
+        ]
     },
     {
-        "sentence": "During the days it can get up to 20 degree celsius hot.",
-        "trust_score": 0.02,
-        "ref": "None"
+        "sentence": "In Northern Finland, it is colder than in Southern Finland and the temperature can be as low as -30\u00b0C.",
+        "docs": [
+            {
+                "content": "Information about Finland\n\nInformation about Finland\n\nFinnish climate\n\nSuomen ilmasto\n\nFinnish climate\n\n28.04.2022\n\nThe Finnish climate is colder than in many other countries. However, the weather varies significantly in different seasons. Finland has a lot of nature, and you can enjoy and explore nature in all seasons.\n\nWinter\n\nSpring\n\nSummer\n\nAutumn\n\nWinter\n\nIn Finland, the winter months are December, January and February. The weather is also cold in November and March. The temperature is often below zero degrees Celsius in winter and can fall to -20 degrees Celsius. In Northern Finland, it is colder than in Southern Finland and the temperature can be as low as -30\u00b0C. It can snow in winter. The ground is often frozen and slippery.\n\nDress warmly in winter. At least wear a warm winter jacket, a hat and gloves, a scarf and warm winter shoes. You should wear several layers of clothing in cold weather.",
+                "distance": "0.19158618",
+                "ref": "https://www.infofinland.fi/en/information-about-finland/finnish-climate"
+            },
+            {
+                "content": "The summer months in Finland are June, July and August. The warmest month is often July. In Southern Finland, the average temperature in the summer is about 20\u00b0C while the temperature in the north is about 15\u00b0C.\n\nEvenings and nights are bright in Finland during the summer, as the sun sets late and rises early. Then, Northern Finland has more daylight hours than Southern Finland. The month with the most daylight is June. In Finland, Midsummer, the night of the midnight sun, is celebrated in June. In the northernmost part of Finland, the sun does not set at all in early summer.\n\nIf you find it hard to sleep in too much light, get blackout curtains for your bedroom.\n\nAutumn\n\nAutumn normally begins at the end of August or the beginning of September. September and October are a time of autumn colours in Finland. Many leaves of plants and trees, which are green in the summer, turn yellow, orange and red. In the time of autumn colours, nature is beautiful and colourful.",
+                "distance": "0.29466388",
+                "ref": "https://www.infofinland.fi/en/information-about-finland/finnish-climate"
+            },
+            {
+                "content": "In Finland, it is often dark in the winter because the sun rises late in the morning and sets in the afternoon. Winter days are darker in Northern Finland than in Southern Finland. In the northernmost part of Finland, the sun does not rise at all for several weeks.\n\nThe lack of daylight can make people tired and anxious. You can make yourself feel better in many different ways.\n\nKeep in touch with your family and friends.\n\nExercise regularly.\n\nEat healthy.\n\nMake sure you get enough vitamin D.\n\nGet a bright light therapy lamp.\n\nLink redirects to another websiteFinnish Institute for Heath and Welfare\n\nHow to stay well in winter, a guideLink redirects to another website\n\nFinnish\n\nSpring\n\nIn Southern Finland, spring begins at the end of March whereas, in the north, spring comes at the end of April. The spring weather is often cool, but warmer than in winter. In spring, nature changes a lot. The snow melts and nature becomes green as plants and trees grow leaves.\n\nSummer",
+                "distance": "0.3032795",
+                "ref": "https://www.infofinland.fi/en/information-about-finland/finnish-climate"
+            },
+            {
+                "content": "In autumn, the weather is cool and often rainy and windy. The Finnish autumn is also dark because the sun sets earlier than in the summer.\n\nLink redirects to another websiteFinnish Meteorological Institute\n\nInformation about the Finnish climateLink redirects to another website\n\nFinnish\n\nSwedish\n\nEnglish",
+                "distance": "0.3193949",
+                "ref": "https://www.infofinland.fi/en/information-about-finland/finnish-climate"
+            }
+        ]
+    },
+    {
+        "sentence": "It can also snow in winter and the ground is often frozen and slippery, so it is important to dress warmly with a warm winter jacket, a hat and gloves, a scarf and warm winter shoes.",
+        "docs": [
+            {
+                "content": "Information about Finland\n\nInformation about Finland\n\nFinnish climate\n\nSuomen ilmasto\n\nFinnish climate\n\n28.04.2022\n\nThe Finnish climate is colder than in many other countries. However, the weather varies significantly in different seasons. Finland has a lot of nature, and you can enjoy and explore nature in all seasons.\n\nWinter\n\nSpring\n\nSummer\n\nAutumn\n\nWinter\n\nIn Finland, the winter months are December, January and February. The weather is also cold in November and March. The temperature is often below zero degrees Celsius in winter and can fall to -20 degrees Celsius. In Northern Finland, it is colder than in Southern Finland and the temperature can be as low as -30\u00b0C. It can snow in winter. The ground is often frozen and slippery.\n\nDress warmly in winter. At least wear a warm winter jacket, a hat and gloves, a scarf and warm winter shoes. You should wear several layers of clothing in cold weather.",
+                "distance": "0.33803466",
+                "ref": "https://www.infofinland.fi/en/information-about-finland/finnish-climate"
+            },
+            {
+                "content": "In Finland, it is often dark in the winter because the sun rises late in the morning and sets in the afternoon. Winter days are darker in Northern Finland than in Southern Finland. In the northernmost part of Finland, the sun does not rise at all for several weeks.\n\nThe lack of daylight can make people tired and anxious. You can make yourself feel better in many different ways.\n\nKeep in touch with your family and friends.\n\nExercise regularly.\n\nEat healthy.\n\nMake sure you get enough vitamin D.\n\nGet a bright light therapy lamp.\n\nLink redirects to another websiteFinnish Institute for Heath and Welfare\n\nHow to stay well in winter, a guideLink redirects to another website\n\nFinnish\n\nSpring\n\nIn Southern Finland, spring begins at the end of March whereas, in the north, spring comes at the end of April. The spring weather is often cool, but warmer than in winter. In spring, nature changes a lot. The snow melts and nature becomes green as plants and trees grow leaves.\n\nSummer",
+                "distance": "0.36745083",
+                "ref": "https://www.infofinland.fi/en/information-about-finland/finnish-climate"
+            },
+            {
+                "content": "In autumn, the weather is cool and often rainy and windy. The Finnish autumn is also dark because the sun sets earlier than in the summer.\n\nLink redirects to another websiteFinnish Meteorological Institute\n\nInformation about the Finnish climateLink redirects to another website\n\nFinnish\n\nSwedish\n\nEnglish",
+                "distance": "0.39484417",
+                "ref": "https://www.infofinland.fi/en/information-about-finland/finnish-climate"
+            },
+            {
+                "content": "The summer months in Finland are June, July and August. The warmest month is often July. In Southern Finland, the average temperature in the summer is about 20\u00b0C while the temperature in the north is about 15\u00b0C.\n\nEvenings and nights are bright in Finland during the summer, as the sun sets late and rises early. Then, Northern Finland has more daylight hours than Southern Finland. The month with the most daylight is June. In Finland, Midsummer, the night of the midnight sun, is celebrated in June. In the northernmost part of Finland, the sun does not set at all in early summer.\n\nIf you find it hard to sleep in too much light, get blackout curtains for your bedroom.\n\nAutumn\n\nAutumn normally begins at the end of August or the beginning of September. September and October are a time of autumn colours in Finland. Many leaves of plants and trees, which are green in the summer, turn yellow, orange and red. In the time of autumn colours, nature is beautiful and colourful.",
+                "distance": "0.44839388",
+                "ref": "https://www.infofinland.fi/en/information-about-finland/finnish-climate"
+            }
+        ]
+    },
+    {
+        "sentence": "It is also often dark in the winter because the sun rises late in the morning and sets in the afternoon.",
+        "docs": [
+            {
+                "content": "In Finland, it is often dark in the winter because the sun rises late in the morning and sets in the afternoon. Winter days are darker in Northern Finland than in Southern Finland. In the northernmost part of Finland, the sun does not rise at all for several weeks.\n\nThe lack of daylight can make people tired and anxious. You can make yourself feel better in many different ways.\n\nKeep in touch with your family and friends.\n\nExercise regularly.\n\nEat healthy.\n\nMake sure you get enough vitamin D.\n\nGet a bright light therapy lamp.\n\nLink redirects to another websiteFinnish Institute for Heath and Welfare\n\nHow to stay well in winter, a guideLink redirects to another website\n\nFinnish\n\nSpring\n\nIn Southern Finland, spring begins at the end of March whereas, in the north, spring comes at the end of April. The spring weather is often cool, but warmer than in winter. In spring, nature changes a lot. The snow melts and nature becomes green as plants and trees grow leaves.\n\nSummer",
+                "distance": "0.26274002",
+                "ref": "https://www.infofinland.fi/en/information-about-finland/finnish-climate"
+            },
+            {
+                "content": "In autumn, the weather is cool and often rainy and windy. The Finnish autumn is also dark because the sun sets earlier than in the summer.\n\nLink redirects to another websiteFinnish Meteorological Institute\n\nInformation about the Finnish climateLink redirects to another website\n\nFinnish\n\nSwedish\n\nEnglish",
+                "distance": "0.30752188",
+                "ref": "https://www.infofinland.fi/en/information-about-finland/finnish-climate"
+            },
+            {
+                "content": "The summer months in Finland are June, July and August. The warmest month is often July. In Southern Finland, the average temperature in the summer is about 20\u00b0C while the temperature in the north is about 15\u00b0C.\n\nEvenings and nights are bright in Finland during the summer, as the sun sets late and rises early. Then, Northern Finland has more daylight hours than Southern Finland. The month with the most daylight is June. In Finland, Midsummer, the night of the midnight sun, is celebrated in June. In the northernmost part of Finland, the sun does not set at all in early summer.\n\nIf you find it hard to sleep in too much light, get blackout curtains for your bedroom.\n\nAutumn\n\nAutumn normally begins at the end of August or the beginning of September. September and October are a time of autumn colours in Finland. Many leaves of plants and trees, which are green in the summer, turn yellow, orange and red. In the time of autumn colours, nature is beautiful and colourful.",
+                "distance": "0.38395762",
+                "ref": "https://www.infofinland.fi/en/information-about-finland/finnish-climate"
+            },
+            {
+                "content": "Information about Finland\n\nInformation about Finland\n\nFinnish climate\n\nSuomen ilmasto\n\nFinnish climate\n\n28.04.2022\n\nThe Finnish climate is colder than in many other countries. However, the weather varies significantly in different seasons. Finland has a lot of nature, and you can enjoy and explore nature in all seasons.\n\nWinter\n\nSpring\n\nSummer\n\nAutumn\n\nWinter\n\nIn Finland, the winter months are December, January and February. The weather is also cold in November and March. The temperature is often below zero degrees Celsius in winter and can fall to -20 degrees Celsius. In Northern Finland, it is colder than in Southern Finland and the temperature can be as low as -30\u00b0C. It can snow in winter. The ground is often frozen and slippery.\n\nDress warmly in winter. At least wear a warm winter jacket, a hat and gloves, a scarf and warm winter shoes. You should wear several layers of clothing in cold weather.",
+                "distance": "0.44368604",
+                "ref": "https://www.infofinland.fi/en/information-about-finland/finnish-climate"
+            }
+        ]
+    },
+    {
+        "sentence": "To cope with the darkness, one can keep in touch with family and friends, exercise regularly, eat healthy and get enough vitamin D, and consider getting a bright light therapy lamp.",
+        "docs": [
+            {
+                "content": "In Finland, it is often dark in the winter because the sun rises late in the morning and sets in the afternoon. Winter days are darker in Northern Finland than in Southern Finland. In the northernmost part of Finland, the sun does not rise at all for several weeks.\n\nThe lack of daylight can make people tired and anxious. You can make yourself feel better in many different ways.\n\nKeep in touch with your family and friends.\n\nExercise regularly.\n\nEat healthy.\n\nMake sure you get enough vitamin D.\n\nGet a bright light therapy lamp.\n\nLink redirects to another websiteFinnish Institute for Heath and Welfare\n\nHow to stay well in winter, a guideLink redirects to another website\n\nFinnish\n\nSpring\n\nIn Southern Finland, spring begins at the end of March whereas, in the north, spring comes at the end of April. The spring weather is often cool, but warmer than in winter. In spring, nature changes a lot. The snow melts and nature becomes green as plants and trees grow leaves.\n\nSummer",
+                "distance": "0.30104735",
+                "ref": "https://www.infofinland.fi/en/information-about-finland/finnish-climate"
+            },
+            {
+                "content": "In autumn, the weather is cool and often rainy and windy. The Finnish autumn is also dark because the sun sets earlier than in the summer.\n\nLink redirects to another websiteFinnish Meteorological Institute\n\nInformation about the Finnish climateLink redirects to another website\n\nFinnish\n\nSwedish\n\nEnglish",
+                "distance": "0.49437702",
+                "ref": "https://www.infofinland.fi/en/information-about-finland/finnish-climate"
+            },
+            {
+                "content": "The summer months in Finland are June, July and August. The warmest month is often July. In Southern Finland, the average temperature in the summer is about 20\u00b0C while the temperature in the north is about 15\u00b0C.\n\nEvenings and nights are bright in Finland during the summer, as the sun sets late and rises early. Then, Northern Finland has more daylight hours than Southern Finland. The month with the most daylight is June. In Finland, Midsummer, the night of the midnight sun, is celebrated in June. In the northernmost part of Finland, the sun does not set at all in early summer.\n\nIf you find it hard to sleep in too much light, get blackout curtains for your bedroom.\n\nAutumn\n\nAutumn normally begins at the end of August or the beginning of September. September and October are a time of autumn colours in Finland. Many leaves of plants and trees, which are green in the summer, turn yellow, orange and red. In the time of autumn colours, nature is beautiful and colourful.",
+                "distance": "0.50627995",
+                "ref": "https://www.infofinland.fi/en/information-about-finland/finnish-climate"
+            },
+            {
+                "content": "Information about Finland\n\nInformation about Finland\n\nFinnish climate\n\nSuomen ilmasto\n\nFinnish climate\n\n28.04.2022\n\nThe Finnish climate is colder than in many other countries. However, the weather varies significantly in different seasons. Finland has a lot of nature, and you can enjoy and explore nature in all seasons.\n\nWinter\n\nSpring\n\nSummer\n\nAutumn\n\nWinter\n\nIn Finland, the winter months are December, January and February. The weather is also cold in November and March. The temperature is often below zero degrees Celsius in winter and can fall to -20 degrees Celsius. In Northern Finland, it is colder than in Southern Finland and the temperature can be as low as -30\u00b0C. It can snow in winter. The ground is often frozen and slippery.\n\nDress warmly in winter. At least wear a warm winter jacket, a hat and gloves, a scarf and warm winter shoes. You should wear several layers of clothing in cold weather.",
+                "distance": "0.5537847",
+                "ref": "https://www.infofinland.fi/en/information-about-finland/finnish-climate"
+            }
+        ]
     }
 ]

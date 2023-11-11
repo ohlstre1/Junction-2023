@@ -69,9 +69,9 @@
     background: linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)),
         /* Add your actual color below */
         hsl(var(--background));
-    height: calc(100% - 3px);
+    height: calc(100% - 75px);
     width: 500px;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     right: -500px;
     /* Initially off-screen on the right */
@@ -80,7 +80,7 @@
 
     /* Additional styling (you can customize these styles as needed) */
     box-shadow: -5px 0 5px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 10px;
+    padding: 0.75rem;
     overflow-y: auto;
 }
 

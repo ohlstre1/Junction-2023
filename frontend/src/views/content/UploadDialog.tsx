@@ -127,7 +127,9 @@ export function UploadDialog() {
                             <DropdownMenuContent>
                                 {databaseNames.map((databaseName) => {
                                     return (
-                                        <DropdownMenuItem onClick={() => handleDropDown(databaseName)}>{snakeCaseToWords(databaseName)}</DropdownMenuItem>
+                                        <DropdownMenuItem
+                                            className='cursor-pointer'
+                                            onClick={() => handleDropDown(databaseName)}>{snakeCaseToWords(databaseName)}</DropdownMenuItem>
                                     )
                                 })}
                             </DropdownMenuContent>

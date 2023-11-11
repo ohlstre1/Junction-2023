@@ -6,6 +6,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import './Content.scss';
 import DisplaySource from './DisplaySource';
 import DatabaseSideNav from './DatabaseSideNav';
+import dummy from './dummy.json';
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -62,6 +63,7 @@ const Demo = () => {
             // Do something with the response if needed
             console.log('Response from server:', response.data);
             setResult(response.data);
+            // setResult(dummy);
             setFetchingResults(false);
 
             // Continue with your logic
@@ -93,7 +95,9 @@ const Demo = () => {
                                         <DropdownMenuContent>
                                             {databaseNames.map((databaseName) => {
                                                 return (
-                                                    <DropdownMenuItem onClick={() => setSelectedDatabaseName(databaseName)}>{snakeCaseToWords(databaseName)}</DropdownMenuItem>
+                                                    <DropdownMenuItem
+                                                        className='cursor-pointer'
+                                                        onClick={() => setSelectedDatabaseName(databaseName)}>{snakeCaseToWords(databaseName)}</DropdownMenuItem>
                                                 )
                                             })}
                                         </DropdownMenuContent>
@@ -128,6 +132,7 @@ const Demo = () => {
                 </div>
                 {selectedSource && (
                     <DisplaySource
+                        data={selectedSource}
                         clear={() => {
                             setSelectedSource(null);
                         }}
