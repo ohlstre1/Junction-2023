@@ -1,5 +1,5 @@
 from langchain.embeddings import OpenAIEmbeddings
-from langchain.document_loaders import TextLoader, SeleniumURLLoader
+from langchain.document_loaders import TextLoader, SeleniumURLLoader, PlaywrightURLLoader
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.text_splitter import TokenTextSplitter
 import os
@@ -33,7 +33,7 @@ def datasaver(number):
             "https://vm.fi/en/frontpage"
         ]
 
-        raw_documents = SeleniumURLLoader(urls=urls).load()
+        raw_documents = PlaywrightURLLoader(urls=urls, remove_selectors=["header", "footer"]).load()
         text_splitter = TokenTextSplitter(chunk_size=1000, chunk_overlap=0)
         documents = text_splitter.split_documents(raw_documents)
         faiss_folder = "vm"
@@ -93,7 +93,7 @@ def datasaver_url(dataset, name, url):
             json.dump(sources, outfile)
 
 
-        raw_documents = SeleniumURLLoader(urls=urls).load()
+        raw_documents = PlaywrightURLLoader(urls=urls, remove_selectors=["header", "footer"]).load()
         text_splitter = TokenTextSplitter(chunk_size=1000, chunk_overlap=0)
         documents = text_splitter.split_documents(raw_documents)
 
