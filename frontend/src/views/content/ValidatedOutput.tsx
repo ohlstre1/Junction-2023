@@ -85,7 +85,7 @@ const ValidatedOutput = ({ data, clear, selectSource }: OutputData) => {
                     </p>
                 </div>
                 <Button
-                    className="float-right mt-3"
+                    className="float-right mt-5"
                     onClick={() => clear()}
                 // disabled={prompt === ""}
                 >

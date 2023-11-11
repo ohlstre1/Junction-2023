@@ -108,3 +108,7 @@
     animation: spin 1s linear infinite;
     /* Apply the spin animation */
 }
+
+.highlight {
+    background-color: hsl(var(--primary));
+}
