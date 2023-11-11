@@ -44,27 +44,27 @@ async def load(number):
     else: 
         return "Failed to load data!"
 
-@app.route('/query/<number>')
-async def query(number):
-    res = await vector_search(int(number))
-    return res
-
 @app.route('/sources')
 def sources():
     f = open('faiss/sources.json')
     sources = json.load(f)
     return json.dumps(sources)
 
-@app.route('/openai_ask/<number>')
-async def openai_ask(number):
-    res = await openai_query(int(number))
-    return res
+# @app.route('/openai_ask/<number>')
+# async def openai_ask(number):
+#     res = await openai_query(int(number))
+#     return res
 
-@app.route('/openai_validate/<number>')
-async def openai_validate(number):
+@app.route('/openai_validate', methods=['POST'])
+async def openai_validate():
+
     start = timeit.default_timer()
-    query = await openai_query(int(number))
-    docs = await vector_search(int(number), query)
+    user_query = request.get_json()["query"]
+    dataset_folder = request.get_json()["dataset"]
+    dataset_path = "./faiss/{}".format(dataset_folder)
+
+    openai_res_query = await openai_query(user_query, dataset_path)
+    docs = await vector_search(openai_res_query, dataset_path, True)
     stop = timeit.default_timer()
 
     print('Time: ', stop - start)  

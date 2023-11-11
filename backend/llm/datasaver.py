@@ -1,7 +1,7 @@
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.document_loaders import TextLoader, SeleniumURLLoader
 from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.text_splitter import CharacterTextSplitter
+from langchain.text_splitter import TokenTextSplitter
 import os
 from dotenv import load_dotenv
 from langchain.vectorstores import FAISS
@@ -16,7 +16,7 @@ def datasaver(number):
 
     if(number == 1):
         raw_documents = TextLoader('./data/state_of_the_union.txt').load()
-        text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
+        text_splitter = TokenTextSplitter(chunk_size=1000, chunk_overlap=0)
         documents = text_splitter.split_documents(raw_documents)
         faiss_folder = "state_of_the_union"
     elif (number == 2):
@@ -25,9 +25,18 @@ def datasaver(number):
         ]
 
         raw_documents = SeleniumURLLoader(urls=urls).load()
-        text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
+        text_splitter = TokenTextSplitter(chunk_size=1000, chunk_overlap=0)
         documents = text_splitter.split_documents(raw_documents)
         faiss_folder = "finnish_climate"
+    elif (number == 3):
+        urls = [
+            "https://vm.fi/en/frontpage"
+        ]
+
+        raw_documents = SeleniumURLLoader(urls=urls).load()
+        text_splitter = TokenTextSplitter(chunk_size=1000, chunk_overlap=0)
+        documents = text_splitter.split_documents(raw_documents)
+        faiss_folder = "vm"
     else:
         return 0
 
@@ -85,7 +94,7 @@ def datasaver_url(dataset, name, url):
 
 
         raw_documents = SeleniumURLLoader(urls=urls).load()
-        text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
+        text_splitter = TokenTextSplitter(chunk_size=1000, chunk_overlap=0)
         documents = text_splitter.split_documents(raw_documents)
 
         embeddings = OpenAIEmbeddings(openai_api_key=key)

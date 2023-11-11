@@ -19,13 +19,11 @@ async def create_openai_docs_arr(texts, docs_arr, sentence_arr, new_db):
     return 1
 
 
-async def vector_search(number, query = ""):
+async def vector_search(query, dataset_path, openai_res = False):
     embeddings = OpenAIEmbeddings(openai_api_key=key)
-    openai_query = 0 if query == "" else 1
-    query = query_dict[number]["query"] if query == "" else query
-    new_db = FAISS.load_local(query_dict[number]["faiss_files"], embeddings)
+    new_db = FAISS.load_local(dataset_path, embeddings)
 
-    if(openai_query):
+    if(openai_res):
         # Split each sentence and similarity search against it
         docs_arr = []
         sentence_arr = []
@@ -37,8 +35,6 @@ async def vector_search(number, query = ""):
 
         for i in range(0, len(docs_arr)):
             doc = docs_arr[i]
-            # print("?????????????")
-            # print(doc)
             s = sentence_arr[i]
             docs_dic = []
             for d in doc:
@@ -47,29 +43,15 @@ async def vector_search(number, query = ""):
                     "distance": str(d[1]),
                     "ref": d[0].metadata["source"]
                 }
-                # print("!!!!!!!!!!!!")
-                # print(d_dict)
                 docs_dic.append(d_dict)
             dic = {
                 "sentence": s,
                 "docs": docs_dic
             }
-            # print("---------------------")
-            # print(dic)
             dict_arr.append(dic)
-            # print("!!!!!!!!!!!!!!!!!!!!!!")
-            # print(dic)
 
         return dict_arr
         
     else:
         # Similarity search the whole query
         return (await new_db.asimilarity_search_with_score(query))
-
-    # if(openai_query):
-    #     for docs in docs_arr:
-    #         print("---------------------------------------------------------")
-    #         for doc in docs:
-    #             print("!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-    #             print("Page content: " + doc[0].page_content + "\n\n")
-    #             print("Distance: " + str(doc[1]))

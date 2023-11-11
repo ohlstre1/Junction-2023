@@ -29,18 +29,17 @@ async def create_info(source):
         info = info + doc[0].page_content + "\n\n END OF THIS PIECE! \n\n"
     return info
 
-async def openai_query(number):
+async def openai_query(user_query, dataset_path):
     load_dotenv()
     key = os.environ["OPENAI_API_KEY"]
     prompt = PromptTemplate(template=template, input_variables=["question", "context"])
-    query = query_dict[number]["query"]
 
-    sources = await vector_search(number)
+    sources = await vector_search(user_query, dataset_path)
     info = await create_info(sources)
 
     llm = OpenAI(openai_api_key=key)
     llm_chain = LLMChain(prompt=prompt, llm=llm)
-    query_res = llm_chain.run(question=query, context=info)
+    openai_res = llm_chain.run(question=user_query, context=info)
 
-    return query_res
+    return openai_res
 
