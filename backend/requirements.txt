@@ -5,3 +5,4 @@ python-dotenv
 faiss-cpu
 tiktoken
 flask[async]
+selenium

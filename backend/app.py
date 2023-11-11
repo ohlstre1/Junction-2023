@@ -29,12 +29,15 @@ app = Flask(__name__)
 # def index():
 #     return 'Index Page'    
 
-@app.route('/load')
-async def load():
-    datasaver()
-    return "Loaded data sucessfully!"
 
-@app.route('/query')
-async def query():
-    res = await vector_search()
+@app.route('/datasave/<number>')
+async def load(number):
+    if(datasaver(int(number))):
+        return "Loaded data sucessfully!"
+    else: 
+        return "Failed to load data!"
+
+@app.route('/query/<number>')
+async def query(number):
+    res = await vector_search(int(number))
     return res
