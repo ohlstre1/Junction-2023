@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from langchain.embeddings.openai import OpenAIEmbeddings
 from llm.llm import vector_search
 from llm.datasaver import datasaver
+import json
 
 app = Flask(__name__)
 
@@ -41,3 +42,9 @@ async def load(number):
 async def query(number):
     res = await vector_search(int(number))
     return res
+
+@app.route('/sources')
+def sources():
+    f = open('faiss/sources.json')
+    sources = json.load(f)
+    return json.dumps(sources)
