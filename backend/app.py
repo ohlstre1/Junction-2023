@@ -44,21 +44,16 @@ async def load(number):
     else: 
         return "Failed to load data!"
 
-@app.route('/query/<number>')
-async def query(number):
-    res = await vector_search(int(number))
-    return res
-
 @app.route('/sources')
 def sources():
     f = open('faiss/sources.json')
     sources = json.load(f)
     return json.dumps(sources)
 
-@app.route('/openai_ask/<number>')
-async def openai_ask(number):
-    res = await openai_query(int(number))
-    return res
+# @app.route('/openai_ask/<number>')
+# async def openai_ask(number):
+#     res = await openai_query(int(number))
+#     return res
 
 @app.route('/openai_validate', methods=['POST'])
 async def openai_validate():
