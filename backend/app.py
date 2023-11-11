@@ -4,7 +4,7 @@ from langchain.vectorstores import FAISS
 import os
 from dotenv import load_dotenv
 from langchain.embeddings.openai import OpenAIEmbeddings
-from llm.llm import vector_search
+from llm.llm import vector_search, find_similar_sentence
 from llm.datasaver import datasaver, datasaver_url
 from llm.openai_query import openai_query
 import timeit
@@ -54,6 +54,18 @@ def sources():
 # async def openai_ask(number):
 #     res = await openai_query(int(number))
 #     return res
+
+@app.route('/similar_sentence', methods=['POST'])
+async def similar_sentence():
+    start = timeit.default_timer()
+    sentence = request.get_json()["sentence"]
+    content = request.get_json()["content"].split(".")
+    match, similarity = await find_similar_sentence(sentence, content)
+
+    print(match)
+    print(similarity)
+
+    return "jee"
 
 @app.route('/openai_validate', methods=['POST'])
 async def openai_validate():

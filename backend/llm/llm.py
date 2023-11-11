@@ -5,6 +5,11 @@ from langchain.vectorstores import FAISS
 from data.dictionary import query_dict
 from langchain.text_splitter import NLTKTextSplitter
 import numpy as np
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
+from nltk.metrics import ConfusionMatrix, accuracy
+
+
 
 load_dotenv()
 key = os.environ["OPENAI_API_KEY"]
@@ -55,3 +60,42 @@ async def vector_search(query, dataset_path, openai_res = False):
     else:
         # Similarity search the whole query
         return (await new_db.asimilarity_search_with_score(query))
+
+async def padding(shorter, longer, n):
+    print(shorter)
+    print(longer)
+    for i in range(0, n):
+        print("11")
+        shorter.append("")
+    return 1
+
+async def find_similar_sentence(original_sentence, content):
+    original_sentence_tokens = word_tokenize(original_sentence)
+    print(original_sentence_tokens)
+
+    best_match = None
+    best_similarity = 0
+
+    for sentence in content:
+        sentence_tokens = word_tokenize(sentence)
+        
+        print(sentence_tokens)
+        orig_len = len(original_sentence_tokens)
+        sen_len = len(sentence_tokens)
+
+        if (orig_len > sen_len):
+            await padding(sentence_tokens, original_sentence_tokens, orig_len - sen_len)
+        elif (sen_len > orig_len):
+            await padding(original_sentence_tokens, sentence_tokens, sen_len - orig_len)
+
+        print(original_sentence_tokens)
+        print(sentence_tokens)
+
+        cm = ConfusionMatrix(sentence_tokens, original_sentence_tokens)
+        similarity = accuracy(cm)
+
+        if similarity > best_similarity:
+            best_similarity = simi
+            best_match = sentence
+
+    return best_match, best_similarity
