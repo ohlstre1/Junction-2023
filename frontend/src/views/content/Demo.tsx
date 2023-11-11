@@ -11,6 +11,9 @@ const Demo = () => {
     const [prompt, setPrompt] = useState('');
     const [fetchingResults, setFetchingResults] = useState(false);
     const [result, setResult] = useState<SentenceData[] | null>(null);
+    const [selectedSource, setSelectedSource] = useState<SentenceData | null>(
+        null
+    );
 
     const handlePromptChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setPrompt(e.target.value);
@@ -60,10 +63,19 @@ const Demo = () => {
                         <ValidatedOutput
                             data={result}
                             clear={clearResults}
+                            selectSource={(source: SentenceData) =>
+                                setSelectedSource(source)
+                            }
                         />
                     )}
                 </div>
-                <DisplaySource />
+                {selectedSource && (
+                    <DisplaySource
+                        clear={() => {
+                            setSelectedSource(null);
+                        }}
+                    />
+                )}
             </div>
         </>
     );

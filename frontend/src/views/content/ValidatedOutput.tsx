@@ -9,9 +9,10 @@ export interface SentenceData {
 export interface OutputData {
     data: SentenceData[];
     clear: () => void;
+    selectSource: (selectedSource: SentenceData) => void;
 }
 
-const ValidatedOutput = ({data, clear}: OutputData) => {
+const ValidatedOutput = ({data, clear, selectSource}: OutputData) => {
     const perc2color = (perc: number) => {
         perc = perc * 100;
         let r,
@@ -48,7 +49,7 @@ const ValidatedOutput = ({data, clear}: OutputData) => {
                     <p className="output-p">
                         {data.map((item, index) => (
                             <span
-                                onClick={() => window.alert(item.trust_score)}
+                                onClick={() => selectSource(item)}
                                 className="output-span"
                                 key={index}
                                 style={perc2color(item.trust_score)}
