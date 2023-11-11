@@ -44,6 +44,7 @@ const DisplaySource = ({ data, clear }: DisplaySourceData) => {
                 </DropdownMenu>
 
                 <h3 className='mb-3'>Similarity score: <b>{`${((1 - parseFloat(data.docs[selectedDocIndex].distance)) * 100).toFixed(2)}%`}</b></h3>
+                <h5 className='mb-3'>Source: <b>{data.docs[selectedDocIndex].ref}</b></h5>
                 <p className='mb-3'>
                     {data.docs[selectedDocIndex].content}
                 </p>
