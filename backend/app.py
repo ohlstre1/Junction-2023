@@ -1,12 +1,13 @@
-from flask import Flask
+from flask import Flask, request
 from langchain.vectorstores import FAISS
 import os
 from dotenv import load_dotenv
 from langchain.embeddings.openai import OpenAIEmbeddings
 from llm.llm import vector_search
-from llm.datasaver import datasaver
+from llm.datasaver import datasaver, datasaver_url
 import json
 from llm.openai_query import openai_query
+import timeit
 
 app = Flask(__name__)
 
@@ -50,7 +51,28 @@ def sources():
     sources = json.load(f)
     return json.dumps(sources)
 
-@app.route('/openai_query/<number>')
-async def openai_query(number):
+@app.route('/openai_ask/<number>')
+async def openai_ask(number):
     res = await openai_query(int(number))
     return res
+
+@app.route('/openai_validate/<number>')
+async def openai_validate(number):
+    start = timeit.default_timer()
+    query = await openai_query(int(number))
+    docs = await vector_search(int(number), query)
+    print(docs)
+    stop = timeit.default_timer()
+
+    print('Time: ', stop - start)  
+    return "jee"
+
+@app.route('/upload/url', methods=['POST'])
+def upload_url():
+    dataset = request.form['dataset']
+    name = request.form['name']
+    url = request.form['url']
+    
+    datasaver_url(dataset, name, url)
+
+    return "hey"
