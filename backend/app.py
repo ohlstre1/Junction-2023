@@ -49,6 +49,7 @@ def sources():
     f = open('faiss/sources.json')
     sources = json.load(f)
     return json.dumps(sources)
+
 @app.route('/openai_query/<number>')
 async def openai_query(number):
     res = await openai_query(int(number))
