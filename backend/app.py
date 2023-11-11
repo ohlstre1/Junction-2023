@@ -1,10 +1,10 @@
-from flask import Flask
+from flask import Flask, request
 from langchain.vectorstores import FAISS
 import os
 from dotenv import load_dotenv
 from langchain.embeddings.openai import OpenAIEmbeddings
 from llm.llm import vector_search
-from llm.datasaver import datasaver
+from llm.datasaver import datasaver, datasaver_url
 import json
 from llm.openai_query import openai_query
 import timeit
@@ -66,3 +66,13 @@ async def openai_validate(number):
 
     print('Time: ', stop - start)  
     return "jee"
+
+@app.route('/upload/url', methods=['POST'])
+def upload_url():
+    dataset = request.form['dataset']
+    name = request.form['name']
+    url = request.form['url']
+    
+    datasaver_url(dataset, name, url)
+
+    return "hey"

@@ -5,6 +5,7 @@ from langchain.text_splitter import CharacterTextSplitter
 import os
 from dotenv import load_dotenv
 from langchain.vectorstores import FAISS
+import json
 
 def datasaver(number):
     load_dotenv()
@@ -37,3 +38,31 @@ def datasaver(number):
     vectors.save_local("./faiss/{}".format(faiss_folder))
 
     return 1
+
+def datasaver_url(dataset, name, url):
+
+        load_dotenv()
+
+        key = os.environ["OPENAI_API_KEY"]
+        faiss_folder = dataset
+        urls = [url]
+
+         # fetch previous data from dataset
+
+        f = open('./faiss/sources.json')
+        sources = json.load(f)
+        for d in sources:
+            if d["name"] == dataset:
+                for s in d["sources"]:
+                    urls.append(s["source"])
+
+        raw_documents = SeleniumURLLoader(urls=urls).load()
+        text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
+        documents = text_splitter.split_documents(raw_documents)
+
+        embeddings = OpenAIEmbeddings(openai_api_key=key)
+        # Create vectors
+        vectors = FAISS.from_documents(documents, embeddings)
+        # Persist the vectors locally on disk
+        vectors.save_local("./faiss/{}".format(faiss_folder))
+        return
