@@ -4,11 +4,10 @@ import {
     CollapsibleContent,
     CollapsibleTrigger,
 } from "@/components/ui/collapsible"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import dummy from './dummy2.json';
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { RadioGroup, RadioGroupItem } from "@radix-ui/react-radio-group";
-import { Label } from "@radix-ui/react-label";
+import axios from 'axios';
 import { UploadDialog } from "./UploadDialog";
 
 type DatabaseSource = {
@@ -25,6 +24,32 @@ type DatabaseData = {
 const DatabaseSideNav = () => {
     const [databases, setDatabases] = useState<DatabaseData[]>(dummy)
     const [selectedDatabaseNames, setSelectedDatabaseNames] = useState<string[]>([]);
+    const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<any>(null);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('http://localhost:5000/sources');
+                setData(response.data);
+            } catch (error) {
+                setError(error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    if (loading) {
+        return <p>Loading...</p>;
+    }
+
+    if (error) {
+        return <p>Error: {error.message}</p>;
+    }
 
     const snakeCaseToWords = (input: string): string => {
         const words = input.split('_');
