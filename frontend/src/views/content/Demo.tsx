@@ -123,6 +123,7 @@ const Demo = () => {
                     ) : (
                         <ValidatedOutput
                             data={result}
+                            prompt={prompt}
                             clear={clearResults}
                             selectSource={(source: SentenceData) =>
                                 setSelectedSource(source)

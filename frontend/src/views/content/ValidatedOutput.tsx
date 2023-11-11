@@ -13,12 +13,13 @@ export interface SentenceData {
 
 export interface OutputData {
     data: SentenceData[];
+    prompt: string;
     clear: () => void;
     selectSource: (selectedSource: SentenceData) => void;
 }
 
 
-const ValidatedOutput = ({ data, clear, selectSource }: OutputData) => {
+const ValidatedOutput = ({ data, prompt, clear, selectSource }: OutputData) => {
     const perc2color = (docs: DocsData[]) => {
         const bestDist = findNearestItemsScore(docs);
         if (!bestDist) {
@@ -71,7 +72,9 @@ const ValidatedOutput = ({ data, clear, selectSource }: OutputData) => {
         <>
             <div className="output-container">
                 <div>
+                    <p className='mb-5'><b>{"Q: "}</b>{prompt}</p>
                     <p className="output-p">
+                        <b>{"A: "}</b>
                         {data.map((item, index) => (
                             <span
                                 onClick={() => selectSource(item)}
