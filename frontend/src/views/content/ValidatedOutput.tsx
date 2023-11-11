@@ -1,9 +1,14 @@
-import {Button} from '@/components/ui/button';
+import { Button } from '@/components/ui/button';
+
+interface DocsData {
+    content: string,
+    distance: string,
+    ref: string
+}
 
 export interface SentenceData {
     sentence: string;
-    trust_score: number;
-    ref: string;
+    docs: DocsData[];
 }
 
 export interface OutputData {
@@ -12,22 +17,42 @@ export interface OutputData {
     selectSource: (selectedSource: SentenceData) => void;
 }
 
-const ValidatedOutput = ({data, clear, selectSource}: OutputData) => {
-    const perc2color = (perc: number) => {
-        perc = perc * 100;
-        let r,
-            g,
-            b = 0;
-        if (perc < 50) {
-            r = 255;
-            g = Math.round(5.1 * perc);
-        } else {
-            g = 255;
-            r = Math.round(510 - 5.1 * perc);
+
+const ValidatedOutput = ({ data, clear, selectSource }: OutputData) => {
+    const perc2color = (docs: DocsData[]) => {
+        const bestDist = findNearestItemsScore(docs);
+        if (!bestDist) {
+            return
         }
+        const bestDistNum = parseFloat(bestDist!);
+        const perc = (1 - bestDistNum) * 100;
+        let color: string;
+
+        if (perc > 70) {
+            color = 'green';
+        } else if (perc > 50) {
+            color = 'yellow';
+        } else {
+            color = 'red';
+        }
+
         return {
-            borderBottom: `4px solid rgba(${r}, ${g}, ${b}, 1)`,
+            borderBottom: `4px solid ${color}`,
         };
+    };
+
+    const findNearestItemsScore = (dataArray: DocsData[]): string | null => {
+        if (dataArray.length === 0) {
+            return null; // Return null if the array is empty
+        }
+
+        // Sort the array based on the distance property
+        const sortedArray = [...dataArray].sort((a, b) => parseFloat(a.distance) - parseFloat(b.distance));
+
+        // The item with the lowest distance is now at the beginning of the sortedArray
+        const nearestItem = sortedArray[0];
+
+        return nearestItem.distance;
     };
 
     // const getHighlightStyle = (trustScore: number) => {
@@ -52,7 +77,7 @@ const ValidatedOutput = ({data, clear, selectSource}: OutputData) => {
                                 onClick={() => selectSource(item)}
                                 className="output-span"
                                 key={index}
-                                style={perc2color(item.trust_score)}
+                                style={perc2color(item.docs)}
                             >
                                 {item.sentence}{' '}
                             </span>
@@ -62,7 +87,7 @@ const ValidatedOutput = ({data, clear, selectSource}: OutputData) => {
                 <Button
                     className="float-right mt-3"
                     onClick={() => clear()}
-                    // disabled={prompt === ""}
+                // disabled={prompt === ""}
                 >
                     Clear
                 </Button>

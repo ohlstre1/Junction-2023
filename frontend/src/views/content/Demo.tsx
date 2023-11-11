@@ -3,7 +3,6 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import ValidatedOutput, { SentenceData } from './ValidatedOutput';
 import { Skeleton } from '@/components/ui/skeleton';
-import dummy from './dummy.json';
 import './Content.scss';
 import DisplaySource from './DisplaySource';
 import DatabaseSideNav from './DatabaseSideNav';
@@ -45,14 +44,31 @@ const Demo = () => {
         setPrompt(e.target.value);
     };
 
-    const sendPrompt = () => {
-        setFetchingResults(true);
-        setTimeout(() => {
-            if (dummy) {
-                setResult(dummy);
-                setFetchingResults(false);
-            }
-        }, 2000);
+    const sendPrompt = async () => {
+        if (selectedDatabaseName === "" || prompt === "") {
+            console.log("sendPrompt failed, one of the required fields were empty");
+            return
+        }
+        try {
+            setFetchingResults(true);
+            // Assuming you have the selectedDatabaseName and prompt variables defined
+            const requestData = {
+                query: prompt,
+                dataset: selectedDatabaseName,
+            };
+
+            const response = await axios.post('http://localhost:5000/openai_validate', requestData);
+
+            // Do something with the response if needed
+            console.log('Response from server:', response.data);
+            setResult(response.data);
+            setFetchingResults(false);
+
+            // Continue with your logic
+        } catch (error) {
+            console.error('Error sending prompt:', error);
+            // Handle the error as needed
+        }
     };
 
     const clearResults = () => {
