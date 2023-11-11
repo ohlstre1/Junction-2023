@@ -9,6 +9,7 @@ import dummy from './dummy2.json';
 import { ChevronDown, ChevronUp } from "lucide-react";
 import axios from 'axios';
 import { UploadDialog } from "./UploadDialog";
+import { snakeCaseToWords } from "./utils";
 
 type DatabaseSource = {
     name: string;
@@ -48,12 +49,6 @@ const DatabaseSideNav = () => {
 
     if (error) {
         return <p>Error: {error.message}</p>;
-    }
-
-    const snakeCaseToWords = (input: string): string => {
-        const words = input.split('_');
-        const capitalizedWords = words.map(word => word.charAt(0).toUpperCase() + word.slice(1));
-        return capitalizedWords.join(' ');
     }
 
     const updateSelectedDatabaseName = (name: string) => {

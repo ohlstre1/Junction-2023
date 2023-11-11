@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import ValidatedOutput, { SentenceData } from './ValidatedOutput';
@@ -7,6 +7,14 @@ import dummy from './dummy.json';
 import './Content.scss';
 import DisplaySource from './DisplaySource';
 import DatabaseSideNav from './DatabaseSideNav';
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import axios from 'axios';
+import { snakeCaseToWords } from './utils';
 
 const Demo = () => {
     const [prompt, setPrompt] = useState('');
@@ -15,6 +23,23 @@ const Demo = () => {
     const [selectedSource, setSelectedSource] = useState<SentenceData | null>(
         null
     );
+    const [databaseNames, setDatabaseNames] = useState<string[]>([]);
+    const [selectedDatabaseName, setSelectedDatabaseName] = useState("");
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('http://localhost:5000/sources');
+                const names = response.data.map((d: any) => d.name)
+                setDatabaseNames(names);
+                setSelectedDatabaseName(names[0])
+            } catch (error) {
+                console.log(error);
+            }
+        };
+
+        fetchData();
+    }, []);
 
     const handlePromptChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setPrompt(e.target.value);
@@ -43,6 +68,20 @@ const Demo = () => {
                         <>
                             {!fetchingResults ? (
                                 <div className="chat-container">
+                                    <DropdownMenu>
+                                        <DropdownMenuTrigger className="w-full mb-3">
+                                            <Button variant={"outline"} className="w-full">
+                                                {snakeCaseToWords(selectedDatabaseName)}
+                                            </Button>
+                                        </DropdownMenuTrigger>
+                                        <DropdownMenuContent>
+                                            {databaseNames.map((databaseName) => {
+                                                return (
+                                                    <DropdownMenuItem onClick={() => setSelectedDatabaseName(databaseName)}>{snakeCaseToWords(databaseName)}</DropdownMenuItem>
+                                                )
+                                            })}
+                                        </DropdownMenuContent>
+                                    </DropdownMenu>
                                     <Textarea
                                         rows={10}
                                         placeholder="Type your message here."
