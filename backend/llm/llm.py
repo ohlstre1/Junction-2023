@@ -19,7 +19,8 @@ async def vector_search(number, query = ""):
 
     for doc in docs:
         print("!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        print(doc)
+        print("Page content: " + doc[0].page_content + "\n\n")
+        print("Distance: " + str(doc[1]))
 
     return docs
 

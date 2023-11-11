@@ -65,7 +65,6 @@ async def openai_validate(number):
     start = timeit.default_timer()
     query = await openai_query(int(number))
     docs = await vector_search(int(number), query)
-    print(docs)
     stop = timeit.default_timer()
 
     print('Time: ', stop - start)  
